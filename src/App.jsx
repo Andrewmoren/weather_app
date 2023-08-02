@@ -13,7 +13,7 @@ function App() {
           <input
             onKeyUp={(e) => {
               if (e.key === "Enter") {
-                // sumit the form
+                // sumit
               }
             }}
             type="text"
