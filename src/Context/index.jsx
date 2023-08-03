@@ -4,11 +4,11 @@ import axios from "axios";
 
 const StateContext = createContext();
 
-export const StateContextProvider = () => {
+export const StateContextProvider = ({ children }) => {
   const [weather, setWeather] = useState({});
   const [values, setValues] = useState([]);
   const [place, setPlace] = useState("Paris");
-  const [location, setLocation] = useState("");
+  const [thisLocation, setLocation] = useState("");
 
   //fetch api
 
@@ -44,4 +44,20 @@ export const StateContextProvider = () => {
       alert("This place does not exist");
     }
   };
+
+  useEffect(() => {
+    fetchWeather();
+  }, [place]);
+
+  useEffect(() => {
+    console.log(values);
+  }, [values]);
+
+  return (
+    <StateContext.Provider value={{ weather, setPlace, values, thisLocation }}>
+      {children}
+    </StateContext.Provider>
+  );
 };
+
+export const useStateContext = () => useContext(StateContext);
