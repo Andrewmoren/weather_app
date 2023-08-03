@@ -23,6 +23,25 @@ export const StateContextProvider = () => {
         unitGroup: "metric",
         shortColumnNames: 0,
       },
+
+      headers: {
+        "X-RapidAPI-Key": import.meta.env.VITE_API_KEY,
+        "X-RapidAPI-Host": "visual-crossing-weather.p.rapidapi.com",
+      },
     };
+
+    try {
+      const response = await axios.request(options);
+      console.log(response.data);
+      const thisData = Object.values(response.data.location)[0];
+
+      setLocation(thisData.address);
+      setValues(thisData.values);
+      setWeather(thisData.values[0]);
+    } catch (e) {
+      console.error(e);
+
+      alert("This place does not exist");
+    }
   };
 };
