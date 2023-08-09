@@ -22,6 +22,20 @@ const BackgroundLayout = () => {
         setImage(Clear);
       } else if (imageString.toLowerCase().includes("cloud")) {
         setImage(Cloudy);
+      } else if (
+        imageString.toLowerCase().includes("rain") ||
+        imageString.toLowerCase().includes("shower")
+      ) {
+        setImage(Rainy);
+      } else if (imageString.toLowerCase().includes("snow")) {
+        setImage(Snow);
+      } else if (imageString.toLowerCase().includes("fog")) {
+        setImage(Fog);
+      } else if (
+        imageString.toLowerCase().includes("thunder") ||
+        imageString.toLowerCase().includes("storm")
+      ) {
+        setImage(Stormy);
       }
     }
   }, [weather]);
