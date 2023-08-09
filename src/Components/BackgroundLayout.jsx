@@ -15,6 +15,17 @@ const BackgroundLayout = () => {
   const { weather } = useStateContext();
   const [image, setImage] = useState(Clear);
 
+  useEffect(() => {
+    if (weather.condition) {
+      let imageString = weather.condition;
+      if (imageString.toLowerCase().includes("clear")) {
+        setImage(Clear);
+      } else if (imageString.toLowerCase().includes("cloud")) {
+        setImage(Cloudy);
+      }
+    }
+  }, [weather]);
+
   return <div></div>;
 };
 
