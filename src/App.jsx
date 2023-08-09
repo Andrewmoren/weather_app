@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import search from "./assets/icons/search.svg";
+import { BackgroundLayout } from "./Components";
 import { useStateContext } from "./Context";
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
           />
         </div>
       </nav>
+
+      <BackgroundLayout></BackgroundLayout>
+      <main className="w-full felx flex-wrap gap-8 py-4 px-[10%] items-center justify-center"></main>
     </div>
   );
 }
