@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { useDate } from "../Utils/useDate";
 
 import sun from "../assets/icons/sun.png";
@@ -20,6 +21,22 @@ const WeatherCard = (
 ) => {
   const [icon, setIcon] = useState(sun);
   const { time } = useDate();
+
+  useEffect(() => {
+    if (iconString.toLowerCase().includes("cloud")) {
+      setIcon(cloud);
+    } else if (iconString.toLowerCase().includes("rain")) {
+      setIcon(rain);
+    } else if (iconString.toLowerCase().includes("clear")) {
+      setIcon(sun);
+    } else if (iconString.toLowerCase().includes("thunder")) {
+      setIcon(storm);
+    } else if (iconString.toLowerCase().includes("fog")) {
+      setIcon(fog);
+    } else if (iconString.toLowerCase().includes("snow")) {
+      setIcon(snow);
+    }
+  }, [iconString]);
   return <div></div>;
 };
 
