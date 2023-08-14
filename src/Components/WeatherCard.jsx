@@ -35,6 +35,8 @@ const WeatherCard = (
       setIcon(fog);
     } else if (iconString.toLowerCase().includes("snow")) {
       setIcon(snow);
+    } else if (iconString.toLowerCase().includes("wind")) {
+      setIcon(wind);
     }
   }, [iconString]);
   return <div></div>;
