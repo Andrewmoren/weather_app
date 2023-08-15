@@ -10,6 +10,8 @@ import snow from "../assets/icons/snow.png";
 import storm from "../assets/icons/storm.png";
 import wind from "../assets/icons/wind.png";
 
+import "../index.css";
+
 const WeatherCard = (
   temperature,
   windspeed,
@@ -39,7 +41,9 @@ const WeatherCard = (
       setIcon(wind);
     }
   }, [iconString]);
-  return <div></div>;
+  return (
+    <div className="w-[22rem] min-w-[22rem] h-[30rem] glassCard p-4"></div>
+  );
 };
 
 export default WeatherCard;
