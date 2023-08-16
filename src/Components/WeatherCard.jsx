@@ -62,6 +62,14 @@ const WeatherCard = (
           Humidity <p className="font-normal">{humidity}</p>
         </p>
       </div>
+      <div className="w-full p-3 mt-4 flex justify-between items-center">
+        <p className="font-semibold text-lg">Heat Index</p>
+        <p className="text-lg">{heatIndex ? heatIndex : "N/A"}</p>
+      </div>
+      <hr className="bg-state-600" />
+      <div className="w-fill p-4 flex justify-center items-center text-3xl font-semibold">
+        {conditios}
+      </div>
     </div>
   );
 };
