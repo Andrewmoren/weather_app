@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./App.css";
 import search from "./assets/icons/search.svg";
-import { BackgroundLayout } from "./Components";
+import { BackgroundLayout, WeatherCard, MiniCard } from "./Components";
 import { useStateContext } from "./Context";
 
 function App() {
   const [input, setInput] = useState("");
-  const { weather } = useStateContext();
+  const { weather, thisLocation } = useStateContext();
   console.log(weather);
   return (
     <div className="w-full h-screen text-white px-8">
@@ -30,7 +30,7 @@ function App() {
 
       <BackgroundLayout></BackgroundLayout>
       <main className="w-full felx flex-wrap gap-8 py-4 px-[10%] items-center justify-center">
-        
+        <WeatherCard place={thisLocation}></WeatherCard>
       </main>
     </div>
   );
