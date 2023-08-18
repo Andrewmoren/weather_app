@@ -37,6 +37,11 @@ const MiniCard = ({ time, temp, iconString }) => {
             .split(" ")[0]
         }
       </p>
+      <hr />
+      <div className="w-full flex justify-center items-center flex-1">
+        <img src={icon} alt="weather" className="w-[4rem] h-[4rem]" />
+      </div>
+      <p className="text-center">{temp}&deg;C</p>
     </div>
   );
 };
