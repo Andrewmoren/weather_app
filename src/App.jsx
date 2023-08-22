@@ -6,8 +6,7 @@ import { useStateContext } from "./Context";
 
 function App() {
   const [input, setInput] = useState("");
-  const { weather, thisLocation } = useStateContext();
-  console.log(weather);
+  const { weather, thisLocation, values } = useStateContext();
   return (
     <div className="w-full h-screen text-white px-8">
       <nav className="w-full p-3 flex justify-between items-center">
@@ -30,7 +29,15 @@ function App() {
 
       <BackgroundLayout></BackgroundLayout>
       <main className="w-full felx flex-wrap gap-8 py-4 px-[10%] items-center justify-center">
-        <WeatherCard place={thisLocation}></WeatherCard>
+        <WeatherCard
+          place={thisLocation}
+          windspeed={weather.windspeed}
+          humidity={weather.humidity}
+          temperature={weather.temp}
+          heatIndex={weather.heatIndex}
+          iconString={weather.conditions}
+          conditions={weather.conditions}
+        />
       </main>
     </div>
   );
