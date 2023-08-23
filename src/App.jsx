@@ -3,6 +3,7 @@ import "./App.css";
 import search from "./assets/icons/search.svg";
 import { BackgroundLayout, WeatherCard, MiniCard } from "./Components";
 import { useStateContext } from "./Context";
+import MiniCard from "./Components";
 
 function App() {
   const [input, setInput] = useState("");
@@ -38,6 +39,17 @@ function App() {
           iconString={weather.conditions}
           conditions={weather.conditions}
         />
+
+        <div className="flex justify-center gap-8 flex-wrap w-[60%]">
+          {values?.slice(1, 7).map((curr) => {
+            <MiniCard
+              key={curr.datetime}
+              time={curr.datetime}
+              temp={curr.temp}
+              iconString={curr.conditions}
+            />;
+          })}
+        </div>
       </main>
     </div>
   );
