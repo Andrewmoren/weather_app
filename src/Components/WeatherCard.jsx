@@ -59,7 +59,7 @@ const WeatherCard = (
           Wind Speed <p className="font-normal">{windspeed}</p>
         </p>
         <p className="flex-1 text-center p-2 font-bold rounded-lg bg-green-600">
-          Humidity <p className="font-normal">{humidity}</p>
+          Humidity <p className="font-normal">{humidity}gm/m&#179;</p>
         </p>
       </div>
       <div className="w-full p-3 mt-4 flex justify-between items-center">

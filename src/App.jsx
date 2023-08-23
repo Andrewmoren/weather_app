@@ -11,6 +11,8 @@ function App() {
 
   const submitCity = () => {
     setPlace(input);
+
+    setInput("");
   };
   return (
     <div className="w-full h-screen text-white px-8">
@@ -37,7 +39,7 @@ function App() {
       <BackgroundLayout></BackgroundLayout>
       <main className="w-full flex flex-wrap gap-8 py-4 px-[10%] items-center justify-center">
         <WeatherCard
-          place={place}
+          place={thisLocation}
           windspeed={weather.wspd}
           humidity={weather.humidity}
           temperature={weather.temp}

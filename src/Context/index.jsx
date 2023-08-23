@@ -54,7 +54,9 @@ export const StateContextProvider = ({ children }) => {
   }, [values]);
 
   return (
-    <StateContext.Provider value={{ weather, setPlace, values, thisLocation }}>
+    <StateContext.Provider
+      value={{ weather, setPlace, values, thisLocation, place }}
+    >
       {children}
     </StateContext.Provider>
   );
