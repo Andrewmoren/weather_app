@@ -3,17 +3,16 @@ import "./App.css";
 import search from "./assets/icons/search.svg";
 import { BackgroundLayout, WeatherCard, MiniCard } from "./Components";
 import { useStateContext } from "./Context";
-import MiniCard from "./Components";
 
 function App() {
   const [input, setInput] = useState("");
   const { weather, thisLocation, values, place, setPlace } = useStateContext();
 
-  const submitCity = () => {
-    setPlace(input);
+  // const submitCity = () => {
+  //   setPlace(input);
 
-    setInput("");
-  };
+  //   setInput("");
+  // };
   return (
     <div className="w-full h-screen text-white px-8">
       <nav className="w-full p-3 flex justify-between items-center">

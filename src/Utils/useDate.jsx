@@ -27,7 +27,7 @@ export const useDate = () => {
   });
 
   return {
-    data,
+    date,
     time,
   };
 };
