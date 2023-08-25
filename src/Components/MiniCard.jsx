@@ -6,7 +6,7 @@ import fog from "../assets/icons/fog.png";
 import rain from "../assets/icons/rain.png";
 import snow from "../assets/icons/snow.png";
 import storm from "../assets/icons/storm.png";
-import wind from "../assets/icons/wind.png";
+// import wind from "../assets/icons/wind.png";
 
 const MiniCard = ({ time, temp, iconString }) => {
   const [icon, setIcon] = useState();
