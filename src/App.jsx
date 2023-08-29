@@ -5,7 +5,7 @@ import { BackgroundLayout, WeatherCard, MiniCard } from "./Components";
 import { useStateContext } from "./Context";
 
 function App() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(" ");
   const { weather, thisLocation, values, place, setPlace } = useStateContext();
 
   const submitCity = () => {
@@ -22,7 +22,6 @@ function App() {
           <input
             onKeyUp={(e) => {
               if (e.key === "Enter") {
-                // sumit the form
                 submitCity();
               }
             }}
