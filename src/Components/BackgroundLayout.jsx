@@ -3,39 +3,39 @@ import { useStateContext } from "../Context";
 
 //images
 
-import Clear from "../assets/images/Clear.jpg";
-import Fog from "../assets/images/fog.png";
-import Cloudy from "../assets/images/Cloudy.jpg";
-import Rainy from "../assets/images/Rainy.jpg";
-import Snow from "../assets/images/snow.jpg";
-import Stormy from "../assets/images/Stormy.jpg";
-import Sunny from "../assets/images/Sunny.jpg";
+import clear from "../assets/images/Clear.jpg";
+import fog from "../assets/images/fog.png";
+import cloudy from "../assets/images/Cloudy.jpg";
+import rainy from "../assets/images/Rainy.jpg";
+import snow from "../assets/images/snow.jpg";
+import stormy from "../assets/images/Stormy.jpg";
+import sunny from "../assets/images/Sunny.jpg";
 
 const BackgroundLayout = () => {
   const { weather } = useStateContext();
-  const [image, setImage] = useState(Clear);
+  const [image, setImage] = useState(clear);
 
   useEffect(() => {
     if (weather.condition) {
       let imageString = weather.condition;
       if (imageString.toLowerCase().includes("clear")) {
-        setImage(Clear);
+        setImage(clear);
       } else if (imageString.toLowerCase().includes("cloud")) {
-        setImage(Cloudy);
+        setImage(cloudy);
       } else if (
         imageString.toLowerCase().includes("rain") ||
         imageString.toLowerCase().includes("shower")
       ) {
-        setImage(Rainy);
+        setImage(rainy);
       } else if (imageString.toLowerCase().includes("snow")) {
-        setImage(Snow);
+        setImage(snow);
       } else if (imageString.toLowerCase().includes("fog")) {
-        setImage(Fog);
+        setImage(fog);
       } else if (
         imageString.toLowerCase().includes("thunder") ||
         imageString.toLowerCase().includes("storm")
       ) {
-        setImage(Stormy);
+        setImage(stormy);
       }
     }
   }, [weather]);
