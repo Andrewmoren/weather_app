@@ -11,30 +11,30 @@ import wind from "../assets/icons/wind.png";
 const MiniCard = ({ time, temp, iconString }) => {
   const [icon, setIcon] = useState();
 
-  useEffect(() => {
-    if (iconString.toLowerCase().includes("cloud")) {
-      setIcon(cloud);
-    } else if (iconString.toLowerCase().includes("rain")) {
-      setIcon(rain);
-    } else if (iconString.toLowerCase().includes("clear")) {
-      setIcon(sun);
-    } else if (iconString.toLowerCase().includes("thunder")) {
-      setIcon(storm);
-    } else if (iconString.toLowerCase().includes("fog")) {
-      setIcon(fog);
-    } else if (iconString.toLowerCase().includes("snow")) {
-      setIcon(snow);
-    } else if (iconString.toLowerCase().includes("wind")) {
-      setIcon(wind);
-    }
-  }, [iconString]);
+  // useEffect(() => {
+  //   if (iconString.toLowerCase().includes("cloud")) {
+  //     setIcon(cloud);
+  //   } else if (iconString.toLowerCase().includes("rain")) {
+  //     setIcon(rain);
+  //   } else if (iconString.toLowerCase().includes("clear")) {
+  //     setIcon(sun);
+  //   } else if (iconString.toLowerCase().includes("thunder")) {
+  //     setIcon(storm);
+  //   } else if (iconString.toLowerCase().includes("fog")) {
+  //     setIcon(fog);
+  //   } else if (iconString.toLowerCase().includes("snow")) {
+  //     setIcon(snow);
+  //   } else if (iconString.toLowerCase().includes("wind")) {
+  //     setIcon(wind);
+  //   }
+  // }, [iconString]);
   return (
     <div className="glassCard w-[10rem] h-[10rem] p-4 flex flex-col">
       <p className="text-center">
         {
           new Date(time)
             .toLocaleTimeString("en", { weekday: "long" })
-            .split("")[0]
+            .split(" ")[0]
         }
       </p>
       <hr />
